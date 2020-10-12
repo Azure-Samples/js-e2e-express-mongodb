@@ -6,11 +6,14 @@ const insertDocuments = async (
     collectionName = 'documents',
     documents = [{ a: 1 }, { a: 2 }, { a: 3 }]
 ) => {
+    
+    // check params
     if (!db || !collectionName || !documents)
         throw Error('insertDocuments::missing required params');
 
     // Get the collection
     const collection = await db.collection(collectionName);
+    
     // Insert some documents
     await collection.insertMany(documents);
 };
@@ -19,6 +22,8 @@ const findDocuments = async (
     collectionName = 'documents',
     query = { a: 3 }
 ) => {
+    
+    // check params
     if (!db || !collectionName)
         throw Error('findDocuments::missing required params');
 
@@ -34,6 +39,8 @@ const removeDocuments = async (
     collectionName = 'documents',
     docFilter = {}
 ) => {
+    
+    // check params
     if (!db || !collectionName)
         throw Error('removeDocuments::missing required params');
 
@@ -45,6 +52,8 @@ const removeDocuments = async (
 };
 
 const removeDocument = async (db, collectionName = 'documents', id) => {
+    
+    // check params
     if (!db || !collectionName || !id)
         throw Error('removeDocument::missing required params');
 
@@ -60,20 +69,25 @@ const indexCollection = async (
     collectionName = 'documents',
     index = { a: 1 }
 ) => {
+    
+    // check params
     if (!db || !collectionName || !index)
         throw Error('indexCollection::missing required params');
 
-    if (!db || !collectionName) return;
-
+    // create index
     await db.collection(collectionName).createIndex(index, null);
 };
 
 const connect = async (url) => {
+    
+    // check params
     if (!url) throw Error('connect::missing required params');
 
     return MongoClient.connect(url, { useUnifiedTopology: true });
 };
 const disconnect = async (client) => {
+    
+    // check params
     if (!client) throw Error('disconnect::missing required params');
 
     client.close();

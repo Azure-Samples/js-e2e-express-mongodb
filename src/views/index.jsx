@@ -48,6 +48,12 @@ function DataList({ dataItems }) {
     );
 }
 
+/* props = {
+        data: [],
+        dbStatus: false,
+        title: 'Node.js with MongoDB',
+    }
+*/
 function Index(props) {
     return (
         <DefaultLayout>

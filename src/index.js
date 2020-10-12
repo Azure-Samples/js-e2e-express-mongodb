@@ -1,12 +1,14 @@
+// general dependencies
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
+
+// data dependency
 const data = require('./data');
 
+// read .env file
 require('dotenv').config();
 
-// Default port of Azure web app
-// Read [documentation]() to configure app settings to use different port
 const port = process.env.WEB_PORT || 8080;
 const DATABASE_URL = process.env.DATABASE_URL
     ? process.env.DATABASE_URL
@@ -56,8 +58,9 @@ app.engine(
     'jsx',
     require('express-react-views').createEngine({ beautify: true })
 );
-
+// Display form and table
 app.get('/', async (req, res) => {
+    
     console.log(
         `${timeStamp()} - ${req.protocol}//${req.headers.host}${
             req.originalUrl
@@ -78,6 +81,7 @@ app.get('/', async (req, res) => {
     // return react front-end
     res.render('index', initialData);
 });
+// Insert row into table
 app.post('/', async (req, res) => {
     console.log(
         `${timeStamp()} - ${req.protocol}//${req.headers.host}${
@@ -96,7 +100,7 @@ app.post('/', async (req, res) => {
     // return react front-end
     res.redirect('/');
 });
-
+// Delete 1 or all - depending on query string
 app.get('/delete', async (req, res) => {
     console.log(
         `${timeStamp()} - ${req.protocol}//${req.headers.host}${
@@ -112,6 +116,7 @@ app.get('/delete', async (req, res) => {
     res.redirect('/');
 });
 
+// instead of 404 - just return home page
 app.get('*', (req, res) => {
     console.log(
         `${timeStamp()} - ${req.protocol}//${req.headers.host}${
