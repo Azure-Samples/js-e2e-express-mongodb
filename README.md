@@ -1,57 +1,79 @@
-# Project Name
+# JavaScript end-to-end Express.js app with a MongoDB database
 
-(short, 1-3 sentenced, description of the project)
+The sample code is a JavaScript server written with Express.js and the native MongoDB API. The user adds data ( 2 text fields), can view data, and delete a single row or all rows. 
+
+The programming work is done for you, this tutorial focuses on using the local and remote Azure environments successfully from inside Visual Studio Code with Azure extensions.
+
+The tutorial demonstrates how to load and run the project locally with VSCode, using extensions, was well as how to run the code remotely on an App service. The tutorial includes creating a CosmosDB resource for the Mongo API, getting the connection information and setting that in the app service configuration setting to connect to a cloud database. 
+
+## Sample application
+
+The Node.js app consists of the following elements:
+
+* **Express.js server** hosted on port 8080
+* Simple **React.js server-side view** engine
+* **MongoDB native API** functions to insert, delete, and find data
+
 
 ## Features
 
 This project framework provides the following features:
 
-* Feature 1
-* Feature 2
-* ...
+* Create Azure app resource
+    * Create web app resource
+    * Deploy Express.js app to web app resource
+    * Set app configuration settings
+* Create CosmosDB resource 
+    * Create database resource for use with MongoDB API
+    * Get connection string
 
 ## Getting Started
 
-### Prerequisites
+1. Clone or download repo.
+1. Follow tutorial to create resources with Visual Studio Code extensions.
+    * Create web app resource, to host Express.js app
+    * Create CosmosDB resource, to host MongoDB database
 
-(ideally very short, if any)
+## Create or use existing Azure Subscription 
 
-- OS
-- Library version
-- ...
+* An Azure account with an active subscription. [Create one for free](https://azure.microsoft.com/free/?utm_source=campaign&utm_campaign=vscode-tutorial-appservice-extension&mktingSource=vscode-tutorial-appservice-extension).
 
-### Installation
+## Install software
 
-(ideally very short)
+- [Node.js and npm](https://nodejs.org/en/download), the Node.js package manager installed to your local machine.
+- [Docker](https://docs.docker.com/get-docker/) - Docker is used to provide a local MongoDB database without having to install MongoDB. 
+    - If you need to use Docker to get a local MongoDB database, you also need to use:
+        -  Visual Studio [Dev Containers](https://code.visualstudio.com/docs/remote/containers) provide several common containers for JavaScript development. 
+        - [Remote Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)
+    - If you already have a local MongoDB, and don't want to install Docker, you can still this step. Any steps using the Development Container to access a locally running MongoDB can be repurposed to use your own local MongoDB as long as the following MongoDB URL is available: 
+        - `mongodb://localhost:27017`
+- [Visual Studio Code](https://code.visualstudio.com/) installed to your local machine. 
+- Visual Studio Code extensions:
+    - [Azure App Service extension](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azureappservice) for Visual Studio Code (installed from within Visual Studio Code).
+    - [Azure Databases](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-cosmosdb)
 
-- npm install [package name]
-- mvn install
-- ...
+## Installation
 
-### Quickstart
-(Add steps to get up and running quickly)
+1. Install the sample's dependencies:
 
-1. git clone [repository clone url]
-2. cd [respository name]
-3. ...
+   ```javascript
+    npm install
+    ```
 
+1. Run the command to run the web app.
 
-## Demo
+    ```javascript
+    npm start
+    ```
 
-A demo app is included to show how to use the project.
+1. Open a web browser and use the following url to view the web app on your local computer.
 
-To run the demo, follow these steps:
+    ```url
+    http://localhost:8080/
+    ```
 
-(Add steps to start up the demo)
+## Tests
 
-1.
-2.
-3.
+The integration request depends on a real database connection, either locally or remotely. 
 
-## Resources
-
-(Any additional resources or related projects)
-
-- Link to supporting information
-- Link to similar sample
-- ...
+* Integration test file: test/data-integration.test.js
