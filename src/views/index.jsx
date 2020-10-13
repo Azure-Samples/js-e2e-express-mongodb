@@ -50,13 +50,12 @@ function DataList({ dataItems }) {
 
 /* props = {
         data: [],
-        dbStatus: false,
-        title: 'Node.js with MongoDB',
+        dbStatus: false
     }
 */
 function Index(props) {
     return (
-        <DefaultLayout>
+        <DefaultLayout >
             {props.dbStatus === false && <div>No database found.</div>}
 
             {props.dbStatus === true && (
@@ -78,9 +77,6 @@ function Index(props) {
 function DefaultLayout(props) {
     return (
         <html>
-            <head>
-                <title>{props.title}</title>
-            </head>
             <body>{props.children}</body>
         </html>
     );

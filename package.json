@@ -8,10 +8,10 @@
     "test": "test"
   },
   "scripts": {
-    "test": "jest",
+    "test": "jest --detectOpenHandles",
     "start:dev": "npm run lint && npm run start",
     "start": "node src/index.js --unhandled-rejections=warn",
-    "lint": "eslint **/*.js --fix"
+    "lint": "eslint src/**/*.js --fix"
   },
   "repository": {
     "type": "git",
