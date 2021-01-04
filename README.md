@@ -1,3 +1,16 @@
+---
+page_type: sample
+languages:
+- javascript
+- nodejs
+name: "JavaScript end-to-end - deploy Express.js MongoDB app to App Service from Visual Studio Code"
+description: "Deploy the Express.js application which connects to MongoDB to Azure App Service (on Linux) and a CosmosDB."
+products:
+- azure
+- vs-code
+- azure-app-service
+- azure-cosmos-db
+---
 # JavaScript end-to-end Express.js app with a MongoDB database
 
 For a complete tutorial, please use the [Microsoft Documentation tutorial found here](https://docs.microsoft.com/azure/developer/javascript/tutorial/web-app-mongodb). 
