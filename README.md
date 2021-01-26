@@ -26,9 +26,8 @@ The tutorial demonstrates how to load and run the project locally with VSCode, u
 The Node.js app consists of the following elements:
 
 * **Express.js server** hosted on port 8080
-* **React (cra)** hosted on 3000, with a proxy to 8080
+* Simple **React.js server-side view** engine
 * **MongoDB native API** functions to insert, delete, and find data
-    * Either running local mongo or setting the connection string
 
 
 ## Features
@@ -54,24 +53,42 @@ This project framework provides the following features:
 
 * An Azure account with an active subscription. [Create one for free](https://azure.microsoft.com/free/?utm_source=campaign&utm_campaign=vscode-tutorial-appservice-extension&mktingSource=vscode-tutorial-appservice-extension).
 
+## Install software
+
+- [Node.js and npm](https://nodejs.org/en/download), the Node.js package manager installed to your local machine.
+- [Docker](https://docs.docker.com/get-docker/) - Docker is used to provide a local MongoDB database without having to install MongoDB. 
+    - If you need to use Docker to get a local MongoDB database, you also need to use:
+        -  Visual Studio [Dev Containers](https://code.visualstudio.com/docs/remote/containers) provide several common containers for JavaScript development. 
+        - [Remote Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)
+    - If you already have a local MongoDB, and don't want to install Docker, you can still this step. Any steps using the Development Container to access a locally running MongoDB can be repurposed to use your own local MongoDB as long as the following MongoDB URL is available: 
+        - `mongodb://localhost:27017`
+- [Visual Studio Code](https://code.visualstudio.com/) installed to your local machine. 
+- Visual Studio Code extensions:
+    - [Azure App Service extension](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azureappservice) for Visual Studio Code (installed from within Visual Studio Code).
+    - [Azure Databases](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-cosmosdb)
+
 ## Installation
 
-The server's package.json has all the scripts to control both client and server.
-
-1. Install the client's dependencies:
+1. Install the sample's dependencies:
 
    ```javascript
-    cd clients && npm install
+    npm install
     ```
 
-1. Install the server's dependencies:
-
-   ```javascript
-    cd ../server && npm install
-    ```
-
-1. Run both client and server.
+1. Run the command to run the web app.
 
     ```javascript
-    npm run start:full
+    npm start
     ```
+
+1. Open a web browser and use the following url to view the web app on your local computer.
+
+    ```url
+    http://localhost:8080/
+    ```
+
+## Tests
+
+The integration request depends on a real database connection, either locally or remotely. 
+
+* Integration test file: test/data-integration.test.js
