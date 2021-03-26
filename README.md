@@ -13,13 +13,27 @@ products:
 ---
 # JavaScript end-to-end Express.js app with a MongoDB database
 
-For a complete tutorial, please use the [Microsoft Documentation tutorial found here](https://docs.microsoft.com/azure/developer/javascript/tutorial/web-app-mongodb). 
+Express.js website, with SSR React, connecting to a MongoDB. Deploy to Azure to use:
+
+* Azure App Service 
+* Azure Cosmos DB (MongoDB API) 
 
 The sample code is a JavaScript server written with Express.js and the native MongoDB API. The user adds data ( 2 text fields), can view data, and delete a single row or all rows. 
 
 The programming work is done for you, this tutorial focuses on using the local and remote Azure environments successfully from inside Visual Studio Code with Azure extensions.
 
 The tutorial demonstrates how to load and run the project locally with VSCode, using extensions, was well as how to run the code remotely on an App service. The tutorial includes creating a CosmosDB resource for the Mongo API, getting the connection information and setting that in the app service configuration setting to connect to a cloud database. 
+
+## Version: Environment Variables
+
+* Branch: main
+* [Tutorial](https://docs.microsoft.com/azure/developer/javascript/tutorial/web-app-mongodb) 
+* [JS KeyVault code snippet](https://github.com/Azure-Samples/js-e2e-express-mongodb/blob/keyvault/src/azure/azure-keyvault.js)
+
+## Version: Key Vault
+
+* Branch: keyvault
+* Tutorial: coming soon
 
 ## Sample application
 
@@ -28,7 +42,6 @@ The Node.js app consists of the following elements:
 * **Express.js server** hosted on port 8080
 * Simple **React.js server-side view** engine
 * **MongoDB native API** functions to insert, delete, and find data
-
 
 ## Features
 
@@ -92,3 +105,7 @@ This project framework provides the following features:
 The integration request depends on a real database connection, either locally or remotely. 
 
 * Integration test file: test/data-integration.test.js
+
+## Looking for more Azure JavaScript code?
+
+* [JavaScript e2e repo](https://github.com/azure-samples/js-e2e)
