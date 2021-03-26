@@ -7,4 +7,6 @@ server.create()
     app.listen(port, () => {
         console.log(`Server has started on port ${port}!`);
     }); 
-}).catch(err => console.log(err));
+}).catch(err => {
+    console.log(err)
+});
