@@ -28,12 +28,12 @@ The tutorial demonstrates how to load and run the project locally with VSCode, u
 
 * Branch: main
 * [Tutorial](https://docs.microsoft.com/azure/developer/javascript/tutorial/web-app-mongodb) 
-* [JS KeyVault code snippet](https://github.com/Azure-Samples/js-e2e-express-mongodb/blob/keyvault/src/azure/azure-keyvault.js)
 
 ## Version: Key Vault
 
 * Branch: keyvault
 * Tutorial: coming soon
+* [JS KeyVault code snippet](https://github.com/Azure-Samples/js-e2e-express-mongodb/blob/keyvault/src/azure/azure-keyvault.js)
 
 ## Sample application
 
