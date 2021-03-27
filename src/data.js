@@ -3,13 +3,10 @@ const ObjectId = require('mongodb').ObjectID;
 // read .env file
 require('dotenv').config();
 
-const { getSecret } = require("./azure/azure-keyvault");
-
 /* eslint no-return-await: 0 */
-
-
-
+const { getSecret } = require("./azure/azure-keyvault");
 let dbConfig = null;
+
 let mongoConnection = null;
 let db = null;
 
