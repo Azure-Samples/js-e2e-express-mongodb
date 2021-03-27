@@ -38,14 +38,7 @@ const getSecret = async (secretName, keyVaultName) => {
     *           "tenant": "987654"
     *       }
     * 
-    * 4. Set these environment variables to create the REQUIRED 
-    *    context to use DefaultAzureCredential.
-    * 
-    *    AZURE_TENANT_ID: The `tenant` in the JSON response above.
-    *    AZURE_CLIENT_ID: The `appId` in the JSON response above.
-    *    AZURE_CLIENT_SECRET: The `password` in the JSON response above.
-    * 
-    * 5. Give Service Principal (LOGICAL-APP-NAME) access to 
+    * 4. Give Service Principal (LOGICAL-APP-NAME) access to 
     *   Key Vault with Azure CLI command. The value for --spn is
     *   your `appId`.
     * 
@@ -55,7 +48,7 @@ const getSecret = async (secretName, keyVaultName) => {
     *      --spn REPLACE-WITH-YOUR-SERVICE-PRINCIPAL-APP-ID \
     *      --secret-permissions get list
     * 
-    * 6. Add database connection string as secret named `DATABASEURL`.
+    * 5. Add database connection string as secret named `DATABASEURL`.
     * 
     *      az keyvault secret set \
     *      --subscription REPLACE-WITH-YOUR-SUBSCRIPTION-NAME-OR-ID \
@@ -63,7 +56,25 @@ const getSecret = async (secretName, keyVaultName) => {
     *      --name "DATABASEURL" \
     *      --value "mongodb://my-cosmos-mongodb"
     * 
-    * 7. Call the getSecret function as
+    * 6. Set these environment variables in the `.env` file
+    *    to create the REQUIRED 
+    *    context to use DefaultAzureCredential.
+    * 
+    *    AZURE_TENANT_ID: The `tenant` in the JSON response above.
+    *    AZURE_CLIENT_ID: The `appId` in the JSON response above.
+    *    AZURE_CLIENT_SECRET: The `password` in the JSON response above.
+    * 
+    *    When you deploy the application to Azure app service, 
+    *    you will also need to add this settings to your web app. 
+    * 
+    * 7. Set these environment variables in the `.env` file of the 
+    *    sample project to programmatical determine which Key Vault 
+    *    resource and secret to use.
+    * 
+    *    KEY_VAULT_NAME: The `tenant` in the JSON response above.
+    *    KEY_VAULT_SECRET_NAME_DATABASEURL: The `appId` in the JSON response above.
+    * 
+    * 8. Call the getSecret function as
     * 
     *      const { getSecret } = require("./azure/azure-keyvault");
     *      const KEY_VAULT_CONNECTION_STRING_SECRET_NAME = "DATABASEURL";
