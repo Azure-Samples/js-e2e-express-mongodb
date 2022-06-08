@@ -11,7 +11,12 @@ products:
 - azure-app-service
 - azure-cosmos-db
 ---
-# JavaScript end-to-end Express.js app with a MongoDB database
+
+# Archived repo - replacement available
+
+This repo has been replaced with a seaparte repo: [https://github.com/Azure-Samples/js-e2e-express-mongodb](https://github.com/Azure-Samples/msdocs-nodejs-mongodb-azure-sample-app). Both can be deployed to Azure App Service.
+
+##JavaScript end-to-end Express.js app with a MongoDB database
 
 Express.js website, with SSR React, connecting to a MongoDB. Deploy to Azure to use:
 
